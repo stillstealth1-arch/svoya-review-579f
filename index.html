@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>СВОЯ — защита продукта (внутренний разбор)</title>
+<title>Жизнь 2.0 — защита продукта (внутренний разбор)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -17,90 +17,95 @@
   .accent{color:var(--accent)}.muted{color:var(--muted)}
   a{color:var(--accent)}
 
-  /* header */
   header{padding:64px 0 40px;border-bottom:2px solid var(--ink)}
   header .tag{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:600}
-  header h1{font-size:clamp(40px,7vw,76px);font-weight:700;margin:10px 0 6px;letter-spacing:1px}
-  header .meta{font-size:15px;color:var(--muted)}
-  header .summary{margin-top:22px;font-size:19px;max-width:780px;color:#46403a}
+  header h1{font-size:clamp(46px,9vw,104px);font-weight:700;margin:8px 0 4px;letter-spacing:1px}
+  header .tl{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(18px,3vw,26px);color:var(--plum)}
+  header .meta{font-size:15px;color:var(--muted);margin-top:10px}
+  header .summary{margin-top:22px;font-size:19px;max-width:800px;color:#46403a}
   header .summary b{color:var(--accent)}
-
-  /* TOC */
   .toc{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-  .toc a{display:inline-block;font-size:13px;text-decoration:none;background:var(--card);border:1px solid var(--line);padding:7px 14px;border-radius:20px;color:var(--ink)}
+  .toc a{font-size:13px;text-decoration:none;background:var(--card);border:1px solid var(--line);padding:7px 14px;border-radius:20px;color:var(--ink)}
   .toc a:hover{border-color:var(--accent);color:var(--accent)}
 
   section{padding:56px 0;border-bottom:1px solid var(--line)}
   .snum{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--accent);font-weight:700;letter-spacing:1px}
   h2.title{font-size:clamp(30px,4.4vw,46px);margin:4px 0 8px}
-  .sub{font-size:17px;color:var(--muted);max-width:760px;margin-bottom:30px}
+  .sub{font-size:17px;color:var(--muted);max-width:780px;margin-bottom:30px}
   .lead{font-size:19px;color:#46403a}
   p+p{margin-top:14px}
 
   ul.bul{list-style:none}
-  ul.bul li{padding:8px 0 8px 28px;position:relative;font-size:16.5px;color:#46403a;border-bottom:1px solid var(--line)}
+  ul.bul li{padding:8px 0 8px 28px;position:relative;font-size:16px;color:#46403a;border-bottom:1px solid var(--line)}
   ul.bul li:last-child{border:none}
   ul.bul li:before{content:"—";position:absolute;left:0;color:var(--accent);font-weight:700}
 
   .callout{background:#F4EEE6;border-left:4px solid var(--accent);border-radius:0 12px 12px 0;padding:22px 26px;font-size:18px}
-  .callout.dark{background:var(--ink);color:#F2EADE;border-left-color:var(--gold)}
-  .callout.dark em{color:var(--gold);font-style:normal}
-
   .grid{display:grid;gap:18px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
   @media(max-width:820px){.g2,.g3{grid-template-columns:1fr}}
   .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
-  .card h3{font-size:21px;margin-bottom:6px}.card h4{font-size:18px;color:var(--accent);margin-bottom:6px}
+  .card h3{font-size:21px;margin-bottom:6px}.card h4{font-size:18px;color:var(--accent);margin-bottom:8px}
 
-  /* before-after */
-  .ba{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:8px}
+  /* BIG IDEA */
+  .bigidea{background:var(--ink);color:#F2EADE;border-radius:24px;padding:54px 46px}
+  .bigidea .kick{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .bigidea p{font-family:'Cormorant Garamond',serif;font-size:clamp(23px,3.4vw,34px);line-height:1.32;margin-top:18px}
+  .bigidea p b{color:#fff}
+  .bigidea .punch{color:var(--gold);display:block;margin-top:18px}
+
+  /* before after */
+  .ba{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:14px}
   @media(max-width:600px){.ba{grid-template-columns:1fr}}
   .ba div{padding:22px 24px}.ba .b{background:#F4EEE6}.ba .a{background:#fff;border-left:1px solid var(--line)}
   .ba h4{font-size:16px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
   .ba ul{list-style:none}.ba li{padding:6px 0;font-size:15.5px;border-bottom:1px dashed var(--line)}.ba li:last-child{border:none}.ba .b li{color:var(--muted)}
 
-  /* names */
-  .names{list-style:none;counter-reset:n}
-  .names li{display:flex;gap:16px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line)}
-  .names li .nm{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;min-width:160px;color:var(--ink)}
-  .names li .rs{font-size:15.5px;color:#46403a}
-  .names .star{color:var(--accent)}
+  .names{list-style:none}
+  .names li{display:flex;gap:16px;align-items:flex-start;padding:13px 0;border-bottom:1px solid var(--line)}
+  .names li .nm{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;min-width:150px;color:var(--ink)}
+  .names li .rs{font-size:15px;color:#46403a}.names .star{color:var(--accent)}
 
-  /* table */
+  /* timeline */
+  .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:10px 0 26px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  @media(max-width:780px){.timeline{grid-template-columns:1fr}}
+  .tphase{padding:22px 22px}
+  .tphase+.tphase{border-left:1px solid var(--line)}
+  @media(max-width:780px){.tphase+.tphase{border-left:none;border-top:1px solid var(--line)}}
+  .tphase .when{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--accent);font-weight:700}
+  .tphase .nm{font-weight:600;margin:2px 0 8px}
+  .tphase .d{font-size:14.5px;color:#5c534a}
+  .tphase.hl{background:#FBF1EC}
+
   .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;margin-top:8px}
   table{border-collapse:collapse;width:100%;min-width:880px;font-size:13.5px}
   th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
-  th{background:#F1E9DF;font-family:'Inter';font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:#5c534a;position:sticky;top:0}
+  th{background:#F1E9DF;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:#5c534a}
   td:first-child{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--plum);font-weight:700;text-align:center}
-  .bl{font-weight:600;color:var(--ink)}
-  .cerc{color:var(--accent)}
-  .yes{color:#2f7a4f;font-weight:600}.no{color:var(--muted)}
+  .bl{font-weight:600;color:var(--ink)}.cerc{color:var(--accent)}.yes{color:#2f7a4f;font-weight:600}.no{color:var(--muted)}
   .pivot td{background:#FBF1EC}
+  .pill{display:inline-block;font-size:11px;letter-spacing:.5px;text-transform:uppercase;background:#F1E3DC;color:var(--accent);padding:2px 9px;border-radius:20px;font-weight:600}
 
-  /* steps */
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s}
-  @media(max-width:780px){.steps{grid-template-columns:1fr}}
-  .step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
-  .step:before{counter-increment:s;content:"0" counter(s);font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--gold);font-weight:700;display:block;margin-bottom:6px}
+  .price-hero{display:flex;align-items:baseline;gap:14px;margin:6px 0 22px}
+  .price-hero .v{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:700;color:var(--accent)}
+  .price-hero .l{font-size:16px;color:var(--muted)}
+  .anchors{margin-top:18px;background:#F4EEE6;border-radius:12px;padding:22px 26px;font-size:16px}.anchors b{color:var(--accent)}
 
-  /* pricing */
-  .prices{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  @media(max-width:820px){.prices{grid-template-columns:1fr}}
-  .price{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
-  .price.feat{border:2px solid var(--accent)}
-  .price .pn{font-family:'Cormorant Garamond',serif;font-size:21px}
-  .price .pv{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:var(--accent);margin:4px 0 14px}
-  .price ul{list-style:none}.price li{padding:6px 0 6px 22px;position:relative;font-size:14px;border-bottom:1px solid var(--line)}
-  .price li:before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
+  /* infopovody */
+  .info-group{margin-top:22px}
+  .info-group h4{font-size:18px;color:var(--accent);margin-bottom:10px}
+  .info{display:grid;grid-template-columns:200px 1fr;gap:14px;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px}
+  @media(max-width:680px){.info{grid-template-columns:1fr;gap:2px}}
+  .info .h{font-weight:600;color:var(--ink)}
 
-  .anchors{margin-top:22px;background:#F4EEE6;border-radius:12px;padding:22px 26px;font-size:16px}.anchors b{color:var(--accent)}
-
-  .q{list-style:none;counter-reset:q}
-  .q li{padding:14px 0 14px 44px;position:relative;border-bottom:1px solid var(--line);font-size:16.5px}
-  .q li:before{counter-increment:q;content:"?";position:absolute;left:0;top:12px;width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;text-align:center;font-weight:700;font-family:'Cormorant Garamond',serif;line-height:28px}
-  .q b{color:var(--ink)}
+  /* swot */
+  .swot{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:780px){.swot{grid-template-columns:1fr}}
+  .swot .card.s{border-top:3px solid #2f7a4f}.swot .card.w{border-top:3px solid var(--accent)}
+  .swot ul{list-style:none}.swot li{padding:7px 0 7px 22px;position:relative;font-size:15px;border-bottom:1px solid var(--line)}.swot li:last-child{border:none}
+  .swot .s li:before{content:"+";position:absolute;left:0;color:#2f7a4f;font-weight:700}
+  .swot .w li:before{content:"!";position:absolute;left:2px;color:var(--accent);font-weight:700}
 
   footer{padding:36px 0;text-align:center;color:var(--muted);font-size:13px}
-  .pill{display:inline-block;font-size:11px;letter-spacing:.5px;text-transform:uppercase;background:#F1E3DC;color:var(--accent);padding:2px 9px;border-radius:20px;font-weight:600}
 </style>
 </head>
 <body>
@@ -108,19 +113,14 @@
 <header>
   <div class="wrap">
     <div class="tag">Внутренний разбор · не для клиентов</div>
-    <h1>СВОЯ — защита продукта</h1>
-    <div class="meta">Флагман Ксении Зозули · версия 26.06 · на ревью: Степан, дизайнер, Ксения</div>
-    <p class="summary">Платная программа глубокой женской пересборки на ~2,5 месяца. <b>Психология — двигатель, результат — в жизни.</b> Ниже — на кого запускаемся, твёрдый конечный результат, структура, экономика и большая идея. Задача ревью: сказать «норма / не норма» по каждому блоку.</p>
+    <h1>Жизнь 2.0</h1>
+    <div class="tl">та же ты — но наконец на ходу</div>
+    <div class="meta">Флагман Ксении Зозули · версия 2 · 26.06 · на ревью: Степан, дизайнер, Ксения</div>
+    <p class="summary">Программа глубокой женской пересборки на <b>5,5 месяцев</b>. Суть: женщина застряла — мы находим тот один процесс, что держит всю её жизнь, переписываем его, и то, что стояло годами, сдвигается. <b>Психология — двигатель, результат — в жизни.</b> Задача ревью: «норма / не норма» по каждому блоку.</p>
     <nav class="toc">
-      <a href="#aud">1 · Аудитория</a>
-      <a href="#cer">2 · Результат</a>
-      <a href="#name">3 · Название</a>
-      <a href="#idea">4 · Большая идея</a>
-      <a href="#prog">5 · Программа</a>
-      <a href="#after">6 · После + замер</a>
-      <a href="#price">7 · Защита цены</a>
-      <a href="#diff">8 · Отстройка</a>
-      <a href="#open">9 · На решение</a>
+      <a href="#aud">1 · Аудитория</a><a href="#cer">2 · Результат за 100к</a><a href="#name">3 · Название</a>
+      <a href="#idea">4 · Большая идея</a><a href="#prog">5 · Программа · 5,5 мес</a><a href="#price">6 · Цена 100к</a>
+      <a href="#diff">7 · Отстройка</a><a href="#info">8 · Инфоповоды</a><a href="#swot">9 · Сильные/слабые</a>
     </nav>
   </div>
 </header>
@@ -129,18 +129,31 @@
 <section id="aud">
   <div class="wrap">
     <div class="snum">01</div><h2 class="title">На кого запускаемся</h2>
-    <p class="sub">Женщина ~30–45, у которой внешне уже что-то есть — доход, карьера, бизнес или семья, — а внутри всё иначе.</p>
-    <ul class="bul">
-      <li>Есть потенциал и силы, но никак не выйти на новый уровень</li>
-      <li>Распыление, тревога, выгорание — «всё вроде есть, а не торкает / не моё»</li>
-      <li>Качели: «с понедельника новая жизнь» → попытка → откат → снова</li>
-      <li>Не понимает, чего хочет на самом деле — желания тонут в «надо» и чужих ожиданиях</li>
-      <li>Сливает энергию в чужое, живёт будто не свою жизнь («чужой контур»)</li>
-      <li>Боится проявляться: заявлять о себе, называть цену, выбирать мужчину</li>
-    </ul>
-    <div class="grid g2" style="margin-top:24px">
-      <div class="card"><h4>Кому НЕ нужно</h4><p>Тем, кто ещё не заебался и кому пока ок. Программа для той, у кого уже припекло (слова Ксении).</p></div>
-      <div class="card"><h4>Реальность первого теста</h4><p>Запускаемся по тёплой старой базе (женщины, что её знают) + вход для выгоревших через бесплатник «Дефибриллятор».</p></div>
+    <p class="sub">Женщина 30–45. Внешне у неё уже что-то есть — доход, карьера, бизнес или муж и семья. А внутри она застряла и буксует.</p>
+    <div class="grid g2">
+      <div class="card"><h4>Её конкретные боли</h4>
+        <ul class="bul" style="margin-top:4px">
+          <li>«Знаю, что надо, но не делаю» — годами одно и то же место</li>
+          <li>Качели: «с понедельника новая жизнь» → срыв → вина → снова</li>
+          <li>Выгорание: тянет всё на себе, нет энергии, залипает в сериалы/ленту/сладкое</li>
+          <li>Тревога фоном — новости, неопределённость, «что будет завтра»</li>
+          <li>«Всё вроде есть, а радости нет, не моё, не торкает»</li>
+          <li>Не понимает, чего хочет — желания подменены чужими «надо»</li>
+          <li>Боится проявляться: заявить цену, выйти в блог, выбрать мужчину, уйти откуда не своё</li>
+        </ul>
+      </div>
+      <div class="card"><h4>Что ей нужно на самом деле</h4>
+        <ul class="bul" style="margin-top:4px">
+          <li>Опора, которая держит, когда вокруг всё трясёт</li>
+          <li>Наконец сдвинуться в том, что годами стоит</li>
+          <li>Вернуть энергию и перестать выгорать</li>
+          <li>Понять, чего хочет именно ОНА</li>
+          <li>Чувствовать, что жизнь её — и она движется</li>
+        </ul>
+        <div style="margin-top:16px"><span class="pill">кому НЕ нужно</span>
+          <p style="font-size:14.5px;color:#5c534a;margin-top:8px">Кто ещё не заебался и кому пока ок. Кто ищет волшебную таблетку «без усилий за 3 дня». Кто хочет, чтобы за неё всё сделали. Кто не готов смотреть на себя честно.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -148,14 +161,14 @@
 <!-- 2 CER -->
 <section id="cer">
   <div class="wrap">
-    <div class="snum">02</div><h2 class="title">Ценный конечный результат</h2>
-    <p class="sub">Принцип твёрдости: продаём не «внутреннюю работу», а изменение жизни, которое видно со стороны.</p>
-    <div class="callout">За 2,5 месяца ты перестаёшь буксовать: находишь <b>ту одну сферу</b>, что держала всю твою жизнь, сдвигаешь её — и выходишь собранной, на своей энергии, с видимыми сдвигами в теле / отношениях / реализации и личной картой, по которой едешь дальше сама.</div>
+    <div class="snum">02</div><h2 class="title">Ценный конечный результат — за что платят 100 000 ₽</h2>
+    <p class="sub">Принцип твёрдости: продаём не «внутреннюю работу» и не инсайты, а изменение жизни, которое видно со стороны. Якорь понятен любой: телефон годами тормозил — обновила систему — летает. Не новый телефон. Тот же. Наконец работает.</p>
+    <div class="callout">За 2,5 месяца ты переходишь с Жизни 1.0 на 2.0: мы находим тот <b>один битый процесс</b>, что годами держал всю твою жизнь (он почти никогда не там, где ты ищешь), переписываем его — и то, что стояло годами, <b>сдвигается</b>. Плюс у тебя остаётся доступ к настройкам — апгрейдить себя дальше самой. А мы держим тебя полгода, чтобы это закрепилось.</div>
     <div class="ba">
-      <div class="b"><h4>До</h4><ul><li>распылённая, в тревоге, в чужом контуре</li><li>качели «начну → откат»</li><li>не знает, чего хочет</li><li>сливает энергию, буксует</li></ul></div>
-      <div class="a"><h4>После</h4><ul><li>собранная, на своей энергии, в своём контуре</li><li>ловит откат и не сливается обратно</li><li>знает вектор, есть 1–3 настоящие цели</li><li>двигается и видит результат по сферам</li></ul></div>
+      <div class="b"><h4>Жизнь 1.0</h4><ul><li>старые программы рулят тобой</li><li>зависаешь годами на одном и том же</li><li>качели, сливы, автопилот, чужой контур</li><li>не знаешь, чего хочешь</li></ul></div>
+      <div class="a"><h4>Жизнь 2.0</h4><ul><li>переписала тот один процесс, что держал всё</li><li>застрявшее — сдвинуто, видно по делам</li><li>система работает на тебя: двигаешься и доводишь</li><li>доступ к настройкам — обновляешь себя сама</li></ul></div>
     </div>
-    <p style="margin-top:20px"><b>Измеримо на выходе:</b> рост по сферам (замер А→Б), минимум по 1 действию в теле / отношениях / реализации, найдена и сдвинута сфера-рычаг, на руках roadmap.<br><span class="muted">Не обещаем конкретную цифру («миллион / замуж») — это переобещание. Обещаем другого человека на выходе + видимые сдвиги + инструмент навсегда.</span></p>
+    <p class="lead" style="margin-top:18px"><b>За 100к ты покупаешь не курс — ты покупаешь конец застоя, который крадёт у тебя годы, и навык больше в него не попадать.</b> Тест подруги: через полгода она видит, что ты сделала то, что 3 года не могла. Это видно. «Стала спокойнее» — не видно.</p>
   </div>
 </section>
 
@@ -164,25 +177,25 @@
   <div class="wrap">
     <div class="snum">03</div><h2 class="title">Название — 5 вариантов</h2>
     <ul class="names">
-      <li><span class="nm">Трансформация</span><span class="rs">тёплое, понятное <span class="muted">(твоё)</span>. Минус: жанрово, рядом с метаморфозами Осипова.</span></li>
-      <li><span class="nm">Жизнь 2.0</span><span class="rs">ясное обещание «другая жизнь» <span class="muted">(твоё)</span>. Минус: техно-привкус, без женского.</span></li>
-      <li><span class="nm star">СВОЯ ★</span><span class="rs">женское присвоение своей жизни; бьёт мимо «Личность» Алины; из её же языка «чужой контур». Рекомендация.</span></li>
-      <li><span class="nm">СДВИГ</span><span class="rs">самый твёрдый, прямо про результат (с мёртвой точки). Хорош как слово-глагол в прогреве.</span></li>
-      <li><span class="nm">Точка сборки</span><span class="rs">«собрать себя в одно»; отстраивает от «коучинга / личности».</span></li>
+      <li><span class="nm star">Жизнь 2.0 ★</span><span class="rs">твоя жизнь, с которой сняли стопор; результат в ЖИЗНИ, а не в голове; отстраивает от «Личности» конкурентов. Рабочий лид.</span></li>
+      <li><span class="nm">Трансформация</span><span class="rs">тёплое, знакомое рынку; минус — жанрово и рядом с метаморфозами Осипова.</span></li>
+      <li><span class="nm">СДВИГ</span><span class="rs">самый твёрдый, слово = результат; держим как глагол-механизм в прогреве.</span></li>
+      <li><span class="nm">СВОЯ</span><span class="rs">женское присвоение своей жизни; мягче и эмоциональнее.</span></li>
+      <li><span class="nm">Точка сборки</span><span class="rs">«собрать себя в одно»; отстраивает от коучинга.</span></li>
     </ul>
-    <p class="lead" style="margin-top:18px">Рекомендую имя <b>СВОЯ</b> + твёрдая строка под ним, а слово <b>СДВИГ</b> держим в прогреве как глагол результата.</p>
+    <p class="lead" style="margin-top:16px">Рекомендация: обложка <b>Жизнь 2.0</b>, под капотом — глагол <b>«сдвиг»</b>, «трансформация» — слово-описатель в текстах.</p>
   </div>
 </section>
 
 <!-- 4 BIG IDEA -->
 <section id="idea">
   <div class="wrap">
-    <div class="snum">04</div><h2 class="title">Большая идея (для прогрева)</h2>
-    <p class="sub">Враг, который атакуем: бесконечная проработка мамы/папы, волшебные таблетки, качели «с понедельника», жизнь в чужом контуре.</p>
-    <div class="callout dark">Ты не сломана, и тебе не нужна «новая жизнь с понедельника». Тебя держит <em>одна-единственная сфера</em> — твоя слепая зона. Найди её, сдвинь — и вся остальная жизнь поедет сама. Это не магия и не волшебная таблетка, это <em>психология как наука: собрать себя и пойти в свою жизнь, а не в чужую.</em></div>
-    <div class="grid g2" style="margin-top:20px">
-      <ul class="bul"><li>«Почему ты всё проработала, а воз и ныне там» — слепая зона</li><li>«Тебе не нужно больше работать — нужно сдвинуть одно»</li></ul>
-      <ul class="bul"><li>«Энергию не качают техниками — ей перестают мешать»</li><li>«Я не коуч, я психолог — у меня наука, а не инструменты с тренинга»</li></ul>
+    <div class="snum">04</div><h2 class="title">Большая идея</h2>
+    <p class="sub">Та, мимо которой невозможно пройти. Бьём в неё как китайская пытка — во всём прогреве, одним смыслом.</p>
+    <div class="bigidea">
+      <span class="kick">для прогрева</span>
+      <p>Тебе кажется, что надо <b>больше стараться</b>. Ещё один курс, ещё одна стратегия, ещё один понедельник. Но ты не ленивая и не сломанная — <b>ты застряла.</b><br><br>В твоей жизни есть один процесс, который годами держит всё остальное. И он почти никогда не там, где ты смотришь. Пока он включён — можно сколько угодно «работать над собой», система будет зависать на том же месте.<br><br>Мы его находим и переписываем. И тогда то, что не двигалось годами, <b>сдвигается за недели.</b>
+      <span class="punch">Это и есть Жизнь 2.0. Не новая жизнь с нуля — твоя, с которой наконец сняли стопор.</span></p>
     </div>
   </div>
 </section>
@@ -190,112 +203,129 @@
 <!-- 5 PROGRAM -->
 <section id="prog">
   <div class="wrap">
-    <div class="snum">05</div><h2 class="title">Структура программы — 10 недель</h2>
-    <p class="sub">Каждую неделю по умолчанию: урок 10–15 мин + ежедневная аудиотехника + мастермайнд-группа 5–10 (там варится ДЗ) + чат побед. Разбор-прелюдия третьего лица (кино/звезда) встроен в урок всегда. Живой эфир-разбор — только на отмеченных неделях (5 шт).</p>
+    <div class="snum">05</div><h2 class="title">Структура — 5,5 месяцев сопровождения</h2>
+    <p class="sub">Не двухмесячный курс, а полугодовой путь. При этом наша основная нагрузка — только в первые 2,5 месяца.</p>
+    <div class="timeline">
+      <div class="tphase hl"><div class="when">0–2,5 мес</div><div class="nm">Программа · 10 недель</div><div class="d">Интенсив: 10 блоков, 5 живых эфиров-разборов, мастермайнды, ежедневные аудиотехники, замер А→Б. Здесь вся вовлечённость.</div></div>
+      <div class="tphase"><div class="when">2,5–5,5 мес</div><div class="nm">Закрепление · 3 месяца</div><div class="d">Мастермайнды самоходом, 1 челлендж в чат в месяц, капсула аудиотехник понедельно, самотрекинг roadmap. Нагрузка на нас ≈ ноль.</div></div>
+      <div class="tphase"><div class="when">6-й месяц</div><div class="nm">Поддерживающий эфир + выпускной</div><div class="d">Ровно через полгода со старта — большой эфир-разбор: третий замер, сверка roadmap, закрепление результата. Выпускной (онлайн / Москва).</div></div>
+    </div>
+    <p class="muted" style="margin-bottom:18px">Каждую неделю интенсива: урок 10–15 мин + ежедневная аудиотехника + мастермайнд-группа 5–10 (там варится ДЗ) + чат побед. Живой эфир-разбор — на отмеченных неделях.</p>
     <div class="tablewrap">
       <table>
-        <thead><tr><th>Нед</th><th>Блок</th><th>ЦКР недели</th><th>Смыслы (доносим)</th><th>ДЗ (мастермайнд)</th><th>Живой разбор</th></tr></thead>
+        <thead><tr><th>Нед</th><th>Блок</th><th>ЦКР недели</th><th>Смыслы</th><th>ДЗ (мастермайнд)</th><th>Живой разбор</th></tr></thead>
         <tbody>
-          <tr><td>1</td><td class="bl">Фундамент жизни</td><td class="cerc">Карта точки А + «я автор»</td><td>«С тобой всё ок — ты в чужом контуре»; энергию не качают, ей не мешают</td><td>Замер точки А + «чего жду извне»</td><td class="yes">ДА — kickoff, рамка безопасности</td></tr>
-          <tr><td>2</td><td class="bl">Состояние и опоры</td><td class="cerc">Знает опоры, возвращает себя в ресурс</td><td>Опирайся на то, что есть; минусы — норма; мозг тянет «от»</td><td>5 опор + анализы + аудиотехника</td><td class="no">нет — строим опору</td></tr>
-          <tr><td>3</td><td class="bl">Ограничения и сопротивление</td><td class="cerc">Видит тормозной рычаг, перестаёт бороться</td><td>Страх — маска сопротивления; меняемся через пруфы, не аффирмации</td><td>Найти сопротивление под «страхом»</td><td class="no">нет — прелюдия в уроке</td></tr>
-          <tr class="pivot"><td>4</td><td class="bl">Слепая зона <span class="pill">ядро</span></td><td class="cerc"><b>Найдена ОДНА сфера-рычаг</b> — «держит не то, что думала»</td><td>Корень не там, где смотришь; окружающие видят тебя лучше; один рычаг сдвигает всё</td><td>Подсветить слепую зону соседки + свой корень</td><td class="yes">ДА — ключевой эфир, разбор по анкете</td></tr>
-          <tr><td>5</td><td class="bl">Любовь как состояние</td><td class="cerc">Вернулись вкус к жизни и энергия</td><td>Из любви всё едет легче; наполнись, а не обслужи; сила внутри</td><td>Забота о внутреннем ребёнке</td><td class="no">лёгкий — «каникулярная» неделя</td></tr>
-          <tr><td>6</td><td class="bl">Истинные желания</td><td class="cerc">Свой вектор + 1–3 настоящие цели</td><td>Отдели своё от инстаграмного; прорыв через сферу, что не рассматривала</td><td>«Чего хочу» + выбрать сферу-рычаг</td><td class="yes">ДА — «навязанное vs своё»</td></tr>
-          <tr><td>7</td><td class="bl">Тело и внутренний слой</td><td class="cerc">Видимый сдвиг в теле / энергии</td><td>Каждое действие облегчает следующее; тело отражает состояние</td><td>1 действие в теле + фото в чат побед</td><td class="no">нет + гость (стилист)</td></tr>
-          <tr><td>8</td><td class="bl">Отношения и внешний слой</td><td class="cerc">Действие в отношениях (написала, граница)</td><td>Отношения едут из состояния; напиши / поставь границу</td><td>Написать тому, с кем хочешь связь</td><td class="yes">ДА — групповая поддержка</td></tr>
-          <tr><td>9</td><td class="bl">Деньги и реализация</td><td class="cerc">Шаг в реализации — заявила / сделала отложенное</td><td>Реализация без слива; деньги у того, кто работает</td><td>1 шаг в реализации + отчёт</td><td class="no">нет + гость (Бибишева)</td></tr>
-          <tr><td>10</td><td class="bl">Стратегия и откаты</td><td class="cerc">Roadmap + ловит откат, не сливается</td><td>Откат — норма, не бросай на спаде; важно движение и вектор</td><td>Roadmap 3/6/9/12 + обещание группе</td><td class="yes">ДА — финал, презентация roadmap</td></tr>
+          <tr><td>1</td><td class="bl">Фундамент жизни</td><td class="cerc">Карта точки А + «я автор»</td><td>«С тобой всё ок — ты в чужом контуре»; энергию не качают, ей не мешают</td><td>Замер точки А + «чего жду извне»</td><td class="yes">ДА — kickoff</td></tr>
+          <tr><td>2</td><td class="bl">Состояние и опоры</td><td class="cerc">Знает опоры, возвращает себя в ресурс</td><td>Опирайся на то, что есть; минусы — норма</td><td>5 опор + анализы + аудиотехника</td><td class="no">нет</td></tr>
+          <tr><td>3</td><td class="bl">Ограничения и сопротивление</td><td class="cerc">Видит тормозной рычаг, перестаёт бороться</td><td>Страх — маска сопротивления; меняемся через пруфы</td><td>Найти сопротивление под «страхом»</td><td class="no">нет</td></tr>
+          <tr class="pivot"><td>4</td><td class="bl">Слепая зона <span class="pill">ядро</span></td><td class="cerc"><b>Найден тот битый процесс</b> — «держит не то, что думала»</td><td>Корень не там, где смотришь; один рычаг сдвигает всё</td><td>Подсветить слепую зону соседки + свой корень</td><td class="yes">ДА — ключевой</td></tr>
+          <tr><td>5</td><td class="bl">Любовь как состояние</td><td class="cerc">Вернулись вкус к жизни и энергия</td><td>Из любви всё едет легче; наполнись, а не обслужи</td><td>Забота о внутреннем ребёнке</td><td class="no">лёгкий</td></tr>
+          <tr><td>6</td><td class="bl">Истинные желания</td><td class="cerc">Свой вектор + 1–3 настоящие цели</td><td>Отдели своё от навязанного; прорыв через сферу, что не рассматривала</td><td>«Чего хочу» + выбрать сферу-рычаг</td><td class="yes">ДА</td></tr>
+          <tr><td>7</td><td class="bl">Тело и внутренний слой</td><td class="cerc">Видимый сдвиг в теле / энергии</td><td>Каждое действие облегчает следующее; тело отражает состояние</td><td>1 действие в теле + фото в чат побед</td><td class="no">+ гость</td></tr>
+          <tr><td>8</td><td class="bl">Отношения и внешний слой</td><td class="cerc">Действие в отношениях</td><td>Отношения едут из состояния; напиши / поставь границу</td><td>Написать тому, с кем хочешь связь</td><td class="yes">ДА</td></tr>
+          <tr><td>9</td><td class="bl">Деньги и реализация</td><td class="cerc">Шаг в реализации</td><td>Реализация без слива; деньги у того, кто работает</td><td>1 шаг в реализации + отчёт</td><td class="no">+ гость</td></tr>
+          <tr><td>10</td><td class="bl">Стратегия и откаты</td><td class="cerc">Roadmap + ловит откат</td><td>Откат — норма, не бросай на спаде; важно движение и вектор</td><td>Roadmap 3/6/9/12 + обещание группе</td><td class="yes">ДА — финал</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="muted" style="margin-top:14px">Ось: I. Собрать себя (1–6) → II. Разогнать жизнь (7–9) → III. Удержать (10). Живых эфиров — 5 (нед. 1, 4, 6, 8, 10). Мастермайнды — каждую неделю.</p>
   </div>
 </section>
 
-<!-- 6 AFTER + MEASURE -->
-<section id="after">
-  <div class="wrap">
-    <div class="snum">06</div><h2 class="title">Что после программы + замер</h2>
-    <p class="sub">Делаем так, чтобы покупали «полгода работы», а наша нагрузка после интенсива ≈ ноль.</p>
-    <div class="grid g2">
-      <div class="card"><h4>≈2,5 месяца после интенсива</h4>
-        <ul class="bul" style="margin-top:6px">
-          <li>Мастермайнды идут самоходом (peer, 0 эксперта)</li>
-          <li>1 челлендж в чат в месяц (заготовлен заранее)</li>
-          <li>Капсула аудиотехник раскрывается понедельно</li>
-          <li>Самотрекинг roadmap</li>
-          <li>1 поддерживающий эфир-разбор на 3-м месяце</li>
-          <li>Выпускной — онлайн или офлайн в Москве</li>
-        </ul>
-      </div>
-      <div class="card"><h4>Зачем это нам</h4><p>Себестоимость близка к нулю, а воспринимается как полугодовое сопровождение. И это честно: результат в психологии консолидируется именно за полгода-год (слова Ксении). Выпускной + до/после = материал для маркетинга следующего потока.</p></div>
-    </div>
-    <h3 style="font-size:24px;margin:32px 0 12px">Замер результата — 3 точки</h3>
-    <div class="steps">
-      <div class="step"><strong>Вход</strong><p class="muted" style="margin-top:6px">Колесо сфер (0–10) + маркеры (сон, энергия, кортизол) + 1–3 цели участницы.</p></div>
-      <div class="step"><strong>Выход интенсива</strong><p class="muted" style="margin-top:6px">Повторный замер → дельта по сферам + чек-лист сделанных действий.</p></div>
-      <div class="step"><strong>+3 месяца</strong><p class="muted" style="margin-top:6px">Третий замер на разборе → закрепление/рост. Готовые до/после для маркетинга.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 7 PRICE DEFENSE -->
+<!-- 6 PRICE -->
 <section id="price">
   <div class="wrap">
-    <div class="snum">07</div><h2 class="title">Защита цены — 50 / 100 / 150к</h2>
-    <p class="sub">Клиент покупает не курс, а ~5 месяцев трансформации + инструмент на всю жизнь + живой доступ к премиальному эксперту.</p>
+    <div class="snum">06</div><h2 class="title">Цена и защита — почему 100к купят сейчас</h2>
+    <div class="price-hero"><span class="v">100 000 ₽</span><span class="l">за 5,5 месяцев · рассрочка снимает порог</span></div>
+    <p class="sub">Главный вопрос ревью: почему женщина отдаст 100к именно в текущих реалиях — когда вокруг тревога, неопределённость и обесценивание всего.</p>
     <div class="grid g2">
-      <div class="card"><h4>Её время — дефицит</h4><p>Ксения брала по 5 личных сессий в день; личная работа дорогая. В программе — живые разборы с ней, доступ растёт с тарифом.</p></div>
-      <div class="card"><h4>Психолог-учёный, не коуч</h4><p>Магистр психологии, 13 000+ часов, аспирантура / кандидат наук, лектор Эрмитажа, БРИКС. Не «инструменты с тренинга».</p></div>
-      <div class="card"><h4>Твёрдый, измеримый результат</h4><p>Не «стала счастливее», а дельта по сферам А→Б→В + видимые действия + навык самонавигации навсегда.</p></div>
-      <div class="card"><h4>Полгода, а не 2 месяца</h4><p>Интенсив + закрепление + выпускной + разбор через 3 месяца. Глубина, которой курс не даёт.</p></div>
+      <div class="card"><h4>В кризис спрос на опору растёт, не падает</h4><p>Когда вокруг всё трясёт, женщина платит не за «курс», а за устойчивость и контроль над своей жизнью. Это не трата на саморазвитие — это инвестиция в то, чтобы не развалиться. Чем нестабильнее снаружи, тем дороже опора внутри.</p></div>
+      <div class="card"><h4>Единственная валюта, что не обесценивается</h4><p>Деньги, планы, будущее — всё обесценивается на глазах. А ты собранная, способная двигаться и принимать решения — нет. В мире, где обесценивается всё, вложиться в себя — самое надёжное.</p></div>
+      <div class="card"><h4>Цена застоя больше цены программы</h4><p>Ещё полгода-год буксовать в деньгах, выгорании и отношениях стоит ей кратно дороже 100к — в недозаработанном, в потраченном здоровье, в утекающем времени. 100к — чтобы это прекратить.</p></div>
+      <div class="card"><h4>Это премиум, а не курс за 5к</h4><p>5,5 месяцев + живой психолог-учёный (а не коуч) + инструмент навсегда. Год личной терапии — 150–250к. Её аудитория — женщины с деньгами, база уже покупала по 38–149к.</p></div>
     </div>
-    <div class="prices" style="margin-top:18px">
-      <div class="price"><div class="pn">Сама</div><div class="pv">50 000 ₽</div><ul><li>10 блоков + аудиотехники</li><li>Мастермайнд + чат побед</li><li>Замер А→Б→В + личная карта</li><li>Закрепление + выпускной онлайн</li><li>Эфиры-разборы в записи</li></ul></div>
-      <div class="price feat"><div class="pn">Вместе <span class="pill">оптимум</span></div><div class="pv">100 000 ₽</div><ul><li>Всё из «Сама»</li><li>5 живых эфиров-разборов с Ксенией</li><li>Гости-эксперты</li><li>Шанс на личный разбор</li><li>Приоритетный мастермайнд</li></ul></div>
-      <div class="price"><div class="pn">VIP</div><div class="pv">150 000 ₽</div><ul><li>Всё из «Вместе»</li><li>Личное внимание (мини-группа / разбор)</li><li>Мастермайнд первым участницам</li><li>Доступ в директ / голос</li><li>Офлайн-выпускной в Москве</li></ul></div>
-    </div>
-    <div class="anchors">
-      <b>Цена не с потолка.</b> Её же «ЦелаЯ» продавалась по 38–149к → 36 продаж на 2,538 млн, средний чек ~70к — рынок уже покупал её в этом диапазоне. Сопоставимый продукт у Алины Косогоровой — «Лучший» + VIP (150к+). Год личной терапии = 150–250к. Один сдвиг сферы-рычага окупает программу многократно.
-      <br><br><span class="muted">Нюанс теста: на первом прогоне по старой базе можно дать особую цену ниже (38–60к), собрать кейсы — дальше поднимать к 50/100/150.</span>
-    </div>
+    <div class="anchors"><b>Якоря:</b> «ЦелаЯ» Ксении дала средний чек ~70к (36 продаж на 2,538 млн) — рынок уже платил ей в этом коридоре. Сопоставимый продукт у Алины Косогоровой — VIP 150к+. Один сдвиг сферы-рычага (подняла чек / не выгорела / наладила отношения) окупает 100к многократно.</div>
   </div>
 </section>
 
-<!-- 8 DIFF -->
+<!-- 7 DIFF -->
 <section id="diff">
   <div class="wrap">
-    <div class="snum">08</div><h2 class="title">Отстройка — почему не клон конкурентов</h2>
-    <p class="sub">Структура «собери новую личность за 2 месяца» — это жанр (Алина, Осипов, Кромберген). На структуре не отстроиться. Отстраиваемся клиньями, куда конкуренты не идут.</p>
+    <div class="snum">07</div><h2 class="title">Отстройка</h2>
+    <p class="sub">«Собери новую личность за 2 месяца через 12 модулей» — это жанр (Алина, Осипов, Кромберген). На структуре не отстроиться. Отстраиваемся клиньями, куда конкуренты не идут.</p>
     <div class="grid g3">
-      <div class="card"><h4>Женский клин</h4><p>Не «личность ради денег и масштаба» (мужская, предпринимательская территория), а глубоко женская пересборка: тело, энергия, сексуальность, отношения И реализация как целое.</p></div>
-      <div class="card"><h4>Клин доказательства</h4><p>Ксения — живой женский кейс: −40 кг, из выгоревшей в женственную и свободную. У конкурентов money-кейсы; у нас — целостная женская трансформация.</p></div>
+      <div class="card"><h4>Женский клин</h4><p>Не «личность ради денег и масштаба» (мужская территория), а глубоко женская пересборка: тело, энергия, сексуальность, отношения И реализация как целое.</p></div>
+      <div class="card"><h4>Доказательство собой</h4><p>Ксения — живой кейс: −40 кг, из выгоревшей в женственную и свободную. У конкурентов money-кейсы; у нас — целостная женская трансформация.</p></div>
       <div class="card"><h4>Научный клин</h4><p>Психолог-учёный (магистр, аспирантура, типология, Эрмитаж), а не «коуч с сертификатом ICF».</p></div>
-      <div class="card"><h4>Клин подачи</h4><p>Женское комьюнити, атмосфера, разборы через кино/мультики, гости-женщины. У конкурента — один эксперт, инструментальная подача.</p></div>
+      <div class="card"><h4>Подача</h4><p>Женское комьюнити, атмосфера, разборы через кино/мультики, гости-женщины. У конкурента — один эксперт, инструментальная подача.</p></div>
       <div class="card"><h4>Личность</h4><p>«Психолог-костоправ» — мягкая женственная + жёсткая в работе. Острее нейтрального коуча.</p></div>
-      <div class="card"><h4>Что не копируем</h4><p>«Пазлы», «точка пробуждения», «новая личность», «самокоучинг», «заменяет год терапии» — чужая/жанровая лексика, обходим.</p></div>
+      <div class="card"><h4>Что НЕ копируем</h4><p>«Пазлы», «точка пробуждения», «новая личность», «самокоучинг», «заменяет год терапии» — чужая лексика, обходим.</p></div>
     </div>
   </div>
 </section>
 
-<!-- 9 OPEN -->
-<section id="open">
+<!-- 8 INFOPOVODY -->
+<section id="info">
   <div class="wrap">
-    <div class="snum">09</div><h2 class="title">На решение команды</h2>
-    <p class="sub">Что нужно подтвердить или поправить на ревью.</p>
-    <ul class="q">
-      <li><b>Название.</b> Берём «СВОЯ», «Трансформация», «Жизнь 2.0» или крутим ещё?</li>
-      <li><b>Слепая зона.</b> Отдельным блоком (рекомендация методолога) или внутри «Ограничений»?</li>
-      <li><b>Цена на первом тесте.</b> Особая ниже (38–60к) ради кейсов — или сразу 50/100/150?</li>
-      <li><b>Наполнение недели «Любовь».</b> Что конкретно даём (внутренний ребёнок, ритуалы) — слово за Ксенией.</li>
-      <li><b>Бесплатник.</b> «Дефибриллятор» для выгоревших или 5-дневный микрорезультат — что берём в тест?</li>
-      <li><b>Длительность.</b> Полные 10 недель сразу или ужатая тестовая версия (~6 недель) на старую базу?</li>
-    </ul>
+    <div class="snum">08</div><h2 class="title">Инфоповоды — под текущее состояние российских женщин</h2>
+    <p class="sub">Каждый смысл цепляется за то, что женщина реально проживает сейчас: тревога, неопределённость, перегруз, давление. Бьём в боль момента — и предлагаем опору.</p>
+
+    <div class="info-group"><h4>Под момент и общий фон</h4>
+      <div class="info"><div class="h">Опора, когда всё трясёт</div><div>На фоне тревоги и неопределённости — внутренняя опора как навык выживания 2026. Не «позитивное мышление», а собранность, которая держит в шторм.</div></div>
+      <div class="info"><div class="h">Выйди из чужих жизней в ленте</div><div>Доомскроллинг, сравнение, бесконечная лента (Instagram* запрещён в РФ, но все там) → перестань жить чужую жизнь, вернись в свой контур.</div></div>
+      <div class="info"><div class="h">Реализация, когда непонятно что завтра</div><div>В нестабильной экономике — как двигаться в деньгах и деле без выгорания, а не замирать в страхе.</div></div>
+      <div class="info"><div class="h">Перестань тянуть всё на себе</div><div>Женское выгорание, двойная-тройная нагрузка (работа + быт + семья) — собрать себя вместо того, чтобы тащить.</div></div>
+      <div class="info"><div class="h">Чего хочешь ТЫ</div><div>На фоне давления «успей / соответствуй / так надо» — вернуть себе право на свои желания.</div></div>
+    </div>
+
+    <div class="info-group"><h4>Сезонные (мы в начале лета)</h4>
+      <div class="info"><div class="h">Лето: тело через собранность</div><div>Не «похудей к пляжу через тревогу», а тело и энергия как следствие собранного состояния. Мягче и честнее, чем у всех.</div></div>
+      <div class="info"><div class="h">Сентябрь: новый сезон — собери себя</div><div>Все идут учиться/начинать. Зайти на «фундаментальную» волну осени.</div></div>
+      <div class="info"><div class="h">Декабрь: не загадывай — сдвинь</div><div>Против марафонов желаний: желания не работают, пока включён старый процесс. Сначала сдвиг.</div></div>
+    </div>
+
+    <div class="info-group"><h4>Личные инфоповоды Ксении — золото, прямо сейчас</h4>
+      <div class="info"><div class="h">Свадьба</div><div>Главный живой кейс прямо сейчас: «я сдвинула свою жизнь через слепую зону — отношения — и выхожу замуж». Идеальная иллюстрация сути продукта.</div></div>
+      <div class="info"><div class="h">−40 кг</div><div>Трансформация-доказательство: метод работает на ней самой.</div></div>
+      <div class="info"><div class="h">Кража 18 млн → решала</div><div>«Как я вытащила клад со дна» — опора и сила из кризиса. Сильнейшая история про устойчивость.</div></div>
+      <div class="info"><div class="h">БРИКС · Госдума · Эрмитаж</div><div>Статус: «я психолог-учёный, а не коуч». Под научный клин отстройки.</div></div>
+    </div>
+    <p class="muted" style="margin-top:14px;font-size:13px">* Instagram принадлежит Meta, признанной экстремистской и запрещённой в РФ.</p>
   </div>
 </section>
 
-<footer><div class="wrap">СВОЯ · защита продукта Ксении Зозули · внутренний документ · 26.06</div></footer>
+<!-- 9 SWOT -->
+<section id="swot">
+  <div class="wrap">
+    <div class="snum">09</div><h2 class="title">Сильные и слабые стороны · защита проекта</h2>
+    <div class="swot">
+      <div class="card s"><h4 style="color:#2f7a4f">Сильные стороны</h4>
+        <ul>
+          <li>Эксперт — живой результат (−40 кг) + статус (магистр, Эрмитаж, БРИКС, 13 000 ч). Премиум, не коуч</li>
+          <li>Тёплая база уже покупала её — спрос доказан, средний чек ~70к</li>
+          <li>Найден твёрдый ЦКР (сдвиг застрявшего) и большая идея, мимо которой не пройти</li>
+          <li>Есть отстройка (женский + научный клин), которой нет у конкурентов</li>
+          <li>Продукт длинный (5,5 мес) при низкой себестоимости хвоста</li>
+          <li>Зашли в момент тревоги — спрос на опору высокий</li>
+        </ul>
+      </div>
+      <div class="card w"><h4>Слабые стороны (честно)</h4>
+        <ul>
+          <li>База выжжена, охваты низкие (сторис 500–700 на 15,5к) — слабый верх воронки</li>
+          <li>Нового трафика нет; рилсы — это будущее, не сейчас</li>
+          <li>Жанр перегрет — отстройка держится на эксперте и подаче, не на структуре</li>
+          <li>Всё завязано на Ксению; гости и коллаборации не раскачаны (она стесняется просить)</li>
+          <li>Психология трудно гарантирует твёрдый результат → риск завышенных ожиданий и возвратов</li>
+          <li>Тест на маленькой тёплой базе → потолок выручки ограничен</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:22px">
+      <b>Защита проекта.</b> Это <b>тестовый</b> запуск на тёплой базе — низкий риск, минимальный бюджет: проверяем связку Степан↔Ксения и собираем первые кейсы, а не жжём деньги на трафик. Твёрдый ЦКР + замер А→Б→В позволяют управлять ожиданиями и копить доказательства. Длинный продукт с фазой закрепления даёт результатам проявиться — меньше возвратов, лучше отзывы. Момент работает на нас: в тревожное время опора продаётся. А дальше — масштаб через рилсы и новую аудиторию, уже на готовых кейсах и отстроенном позиционировании.
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">Жизнь 2.0 · защита продукта Ксении Зозули · внутренний документ · версия 2 · 26.06</div></footer>
 
 </body>
 </html>
