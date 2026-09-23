@@ -20,9 +20,18 @@ html{scroll-behavior:smooth}
 body{
   margin:0;background:var(--paper);color:var(--ink);
   font-family:Manrope,Arial,sans-serif;-webkit-font-smoothing:antialiased;
-  overflow-x:hidden
+  overflow-x:hidden;max-width:100vw
 }
 img{max-width:100%;display:block}
+.countdown{background:#0b0b0b;color:#fff;padding:11px 16px;text-align:center;font-size:11px;font-weight:700;letter-spacing:.02em}
+.countdown b{font-variant-numeric:tabular-nums;font-size:14px;margin-left:7px;letter-spacing:.08em}
+.countdown span{color:#b9afa5}
+.superbonus{margin-top:28px;background:#0d0d0d;color:#fff;border-radius:30px;padding:40px;display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center;overflow:hidden}
+.superbonus .kicker{color:#c7a987}.superbonus h3{font-size:34px;line-height:1.05;letter-spacing:-.04em;margin:12px 0 14px}
+.superbonus p{color:#c8c0b7;margin:0}.superbonus .value{background:#f1e7da;color:#111;border-radius:22px;padding:24px}
+.superbonus .value strong{font-family:Prata,serif;font-size:32px;font-weight:400;display:block;margin:5px 0}
+.superbonus .value small{color:#746b62}
+
 a{color:inherit}
 .wrap{width:min(1160px,calc(100% - 48px));margin:0 auto}
 .kicker{
@@ -221,7 +230,7 @@ details p{font-size:13px;margin-bottom:0;max-width:760px}
   .loop{grid-template-columns:1fr 1fr}.loop-card{min-height:185px}
   .results{grid-template-columns:1fr 1fr}
   .diag{grid-template-columns:1fr}
-  .cover{width:min(78%,340px);margin:auto}
+  .cover{width:min(100%,340px);margin:auto}
   .bonusgrid{grid-template-columns:1fr}
   .buybox{grid-template-columns:1fr;padding:30px 24px}
   .buybox .btn{width:100%}
@@ -242,6 +251,14 @@ details p{font-size:13px;margin-bottom:0;max-width:760px}
   body{padding-bottom:82px}
 }
 @media(max-width:540px){
+  .product{display:block!important}.product>div{width:100%!important;min-width:0!important}
+  .product .cover{width:100%!important;max-width:330px!important;margin:0 auto 42px!important;aspect-ratio:.82!important;padding:26px!important}
+  .cover strong{font-size:32px!important;line-height:1.02!important;overflow-wrap:anywhere}
+  .inside li{font-size:13px;line-height:1.5;padding:14px 0}
+  .superbonus{grid-template-columns:1fr;padding:28px 22px;border-radius:24px;gap:22px}
+  .superbonus h3{font-size:27px}.superbonus .value{padding:20px}
+  .countdown{font-size:9px;padding:9px 8px;position:relative;z-index:110}.countdown b{font-size:12px}.countdown span{display:none}
+  
   .wrap{width:calc(100% - 24px)}
   .brand{font-size:12px}.brand small{font-size:8px}
   .hero{padding-top:34px}
@@ -272,7 +289,7 @@ details p{font-size:13px;margin-bottom:0;max-width:760px}
 }
 </style>
 </head>
-<body>
+<body><div class="countdown">Спецусловие закреплено за тобой ещё <b id="timer">12:00:00</b> <span>· после таймера бонус убирается</span></div>
 <header class="wrap nav">
   <div class="brand">Тимофей Бараковский<small>коуч · работа с внутренними ограничениями</small></div>
   <nav class="navlinks">
@@ -426,7 +443,18 @@ details p{font-size:13px;margin-bottom:0;max-width:760px}
       <div class="bonus fade"><div class="n">БОНУС 03</div><h3>«Первые 7 дней»</h3><p>Простой план, чтобы найденный инсайт превратился в конкретные действия.</p></div>
     </div>
 
-    <div class="buybox fade" id="buy">
+    <div class="superbonus fade">
+  <div>
+    <div class="kicker">Главный бонус · пока идёт таймер</div>
+    <h3>«Личная карта стопора» — AI-разбор твоей ситуации после практикума</h3>
+    <p>После прохождения ты отвечаешь на 12 вопросов о своей конкретной ситуации. На основе ответов получаешь персональную карту: <b style="color:#fff">что именно тебя тормозит → где запускается этот сценарий → какое действие сделать в ближайшие 72 часа</b>. Не ещё одна лекция, а разбор именно твоего кейса.</p>
+  </div>
+  <div class="value">
+    <div class="kicker">Ценность отдельно</div>
+    <strong>4 900 ₽</strong>
+    <small>Сейчас входит бесплатно вместе с практикумом</small>
+  </div>
+</div><div class="buybox fade" id="buy">
       <div>
         <div class="kicker">Доступ к этой версии</div>
         <h3>Практикум + тетрадь + 3 бонуса</h3>
@@ -495,6 +523,17 @@ details p{font-size:13px;margin-bottom:0;max-width:760px}
 </div>
 
 <script>
+(function(){
+  const KEY='timofey_v1_deadline';
+  let end=Number(localStorage.getItem(KEY));
+  if(!end||end<Date.now()){end=Date.now()+12*60*60*1000;localStorage.setItem(KEY,String(end))}
+  const el=document.getElementById('timer');
+  function tick(){
+    let d=Math.max(0,end-Date.now());
+    let h=Math.floor(d/3600000),m=Math.floor((d%3600000)/60000),s=Math.floor((d%60000)/1000);
+    el.textContent=[h,m,s].map(v=>String(v).padStart(2,'0')).join(':');
+  } tick();setInterval(tick,1000);
+})();
 const obs=new IntersectionObserver((entries)=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.08});
 document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
 </script>
